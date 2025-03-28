@@ -1,11 +1,11 @@
 
 import React, { useRef } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
-import { useGLTF, OrbitControls } from '@react-three/drei';
+import { OrbitControls } from '@react-three/drei';
 import * as THREE from 'three';
 
-function Head(props) {
-  const ref = useRef();
+function Head(props: any) {
+  const ref = useRef<THREE.Group>(null);
   
   // Simple animation to slightly rotate the avatar
   useFrame((state) => {
@@ -15,7 +15,6 @@ function Head(props) {
     }
   });
 
-  // Create a simple head geometry
   return (
     <group ref={ref} {...props}>
       {/* Face/Head */}
@@ -25,52 +24,28 @@ function Head(props) {
       </mesh>
       
       {/* Glasses */}
-      <group position={[0, 0.2, 0.4]}>
+      <group position={[0, 0.15, 0.5]}>
         {/* Left lens */}
         <mesh position={[-0.2, 0, 0]}>
-          <boxGeometry args={[0.2, 0.1, 0.05]} />
-          <meshStandardMaterial color="#444" />
+          <boxGeometry args={[0.18, 0.12, 0.05]} />
+          <meshStandardMaterial color="#333" />
         </mesh>
-        
         {/* Right lens */}
         <mesh position={[0.2, 0, 0]}>
-          <boxGeometry args={[0.2, 0.1, 0.05]} />
-          <meshStandardMaterial color="#444" />
+          <boxGeometry args={[0.18, 0.12, 0.05]} />
+          <meshStandardMaterial color="#333" />
         </mesh>
-        
         {/* Bridge */}
         <mesh position={[0, 0, 0]}>
-          <boxGeometry args={[0.1, 0.03, 0.05]} />
-          <meshStandardMaterial color="#444" />
-        </mesh>
-        
-        {/* Left arm */}
-        <mesh position={[-0.3, 0, -0.05]} rotation={[0, -0.5, 0]}>
-          <boxGeometry args={[0.2, 0.03, 0.03]} />
-          <meshStandardMaterial color="#444" />
-        </mesh>
-        
-        {/* Right arm */}
-        <mesh position={[0.3, 0, -0.05]} rotation={[0, 0.5, 0]}>
-          <boxGeometry args={[0.2, 0.03, 0.03]} />
-          <meshStandardMaterial color="#444" />
+          <boxGeometry args={[0.1, 0.02, 0.05]} />
+          <meshStandardMaterial color="#333" />
         </mesh>
       </group>
-      
-      {/* Eyes */}
-      <mesh position={[-0.15, 0.2, 0.4]}>
-        <sphereGeometry args={[0.07, 16, 16]} />
-        <meshStandardMaterial color="#3b82f6" />
-      </mesh>
-      <mesh position={[0.15, 0.2, 0.4]}>
-        <sphereGeometry args={[0.07, 16, 16]} />
-        <meshStandardMaterial color="#3b82f6" />
-      </mesh>
-      
-      {/* Smile */}
-      <mesh position={[0, 0, 0.41]} rotation={[0, 0, 0]}>
-        <torusGeometry args={[0.2, 0.03, 16, 32, Math.PI]} />
-        <meshStandardMaterial color="#333" />
+
+      {/* Hair */}
+      <mesh position={[0, 0.4, 0]}>
+        <sphereGeometry args={[0.52, 32, 32, 0, Math.PI * 2, 0, Math.PI * 0.5]} />
+        <meshStandardMaterial color="#5c4033" />
       </mesh>
     </group>
   );
@@ -78,21 +53,23 @@ function Head(props) {
 
 const AvatarModel = () => {
   return (
-    <Canvas 
-      camera={{ position: [0, 0, 2], fov: 50 }}
-      style={{ 
-        width: '100%', 
-        height: '100%',
-        position: 'absolute',
-        top: 0,
-        left: 0
-      }}
-    >
+    <Canvas shadows style={{ width: '100%', height: '100%' }}>
       <ambientLight intensity={0.5} />
-      <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} intensity={1} castShadow />
-      <pointLight position={[-10, -10, -10]} intensity={0.5} />
-      <Head position={[0, 0, 0]} scale={[1.2, 1.2, 1.2]} />
-      <OrbitControls enableZoom={false} enablePan={false} />
+      <directionalLight 
+        position={[5, 5, 5]} 
+        intensity={1} 
+        castShadow 
+        shadow-mapSize-width={1024} 
+        shadow-mapSize-height={1024} 
+      />
+      <OrbitControls 
+        enableZoom={false} 
+        enablePan={false} 
+        minPolarAngle={Math.PI / 2} 
+        maxPolarAngle={Math.PI / 2}
+        rotateSpeed={0.3}
+      />
+      <Head position={[0, -0.5, 0]} scale={[1.2, 1.2, 1.2]} />
     </Canvas>
   );
 };

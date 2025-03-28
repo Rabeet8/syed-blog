@@ -24,7 +24,7 @@ const Hero = () => {
             to="/about" 
             className="brutal-btn inline-flex items-center"
           >
-            MORE ABOUT ME 
+            ABOUT ME 
             <ArrowRight className="ml-2" size={20} />
           </Link>
         </div>
