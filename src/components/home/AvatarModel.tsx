@@ -4,7 +4,13 @@ import { Canvas, useFrame } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
 import * as THREE from 'three';
 
-function Head(props: any) {
+// Properly type the props for the Head component
+interface HeadProps {
+  position?: [number, number, number];
+  scale?: [number, number, number];
+}
+
+function Head({ position, scale }: HeadProps) {
   const ref = useRef<THREE.Group>(null);
   
   // Simple animation to slightly rotate the avatar
@@ -16,7 +22,7 @@ function Head(props: any) {
   });
 
   return (
-    <group ref={ref} {...props}>
+    <group ref={ref} position={position} scale={scale}>
       {/* Face/Head */}
       <mesh castShadow position={[0, 0.15, 0]}>
         <sphereGeometry args={[0.5, 32, 32]} />
