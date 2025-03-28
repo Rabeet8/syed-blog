@@ -1,20 +1,47 @@
 
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Menu, X, Search } from 'lucide-react';
+import { latestPosts } from '../../data/mockData';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [searchResults, setSearchResults] = useState([]);
+  const navigate = useNavigate();
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
-  const toggleSearch = () => setIsSearchOpen(!isSearchOpen);
+  const toggleSearch = () => {
+    setIsSearchOpen(!isSearchOpen);
+    setSearchQuery('');
+    setSearchResults([]);
+  };
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    if (!searchQuery.trim()) return;
+    
+    // Filter posts based on search query
+    const results = latestPosts.filter(post => 
+      post.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
+      post.category.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      post.excerpt.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+    
+    setSearchResults(results);
+  };
+
+  const handleSearchItemClick = (slug) => {
+    toggleSearch();
+    navigate(`/post/${slug}`);
+  };
 
   return (
     <header className="w-full border-b-4 border-black bg-white py-4 sticky top-0 z-40">
       <div className="container mx-auto px-4 flex justify-between items-center">
         <Link to="/" className="text-2xl font-mono font-bold">
-          NEOBLOG
+          Syed's Blog
         </Link>
         
         <div className="hidden md:flex space-x-6 items-center">
@@ -85,11 +112,13 @@ const Navbar = () => {
           </button>
           
           <div className="w-full max-w-2xl">
-            <form className="flex">
+            <form className="flex" onSubmit={handleSearch}>
               <input 
                 type="text" 
                 placeholder="Search posts..." 
                 className="flex-grow px-4 py-3 border-4 border-black focus:outline-none"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
               />
               <button 
                 type="submit"
@@ -99,6 +128,25 @@ const Navbar = () => {
               </button>
             </form>
             
+            {searchResults.length > 0 && (
+              <div className="mt-6 border-4 border-black p-4 bg-white">
+                <h3 className="font-mono font-bold text-xl mb-4">SEARCH RESULTS</h3>
+                <ul className="divide-y-2 divide-black">
+                  {searchResults.map(post => (
+                    <li key={post.id} className="py-3">
+                      <button 
+                        className="text-left w-full hover:text-neobrutalism-blue transition-colors"
+                        onClick={() => handleSearchItemClick(post.slug)}
+                      >
+                        <h4 className="font-bold">{post.title}</h4>
+                        <p className="text-sm text-gray-600">{post.category} • {post.date}</p>
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+            
             <div className="mt-8">
               <h3 className="font-mono font-bold text-xl mb-4">POPULAR TAGS</h3>
               <div className="flex flex-wrap gap-2">
@@ -106,6 +154,10 @@ const Navbar = () => {
                   <span 
                     key={tag} 
                     className="px-4 py-2 border-4 border-black bg-neobrutalism-yellow hover:bg-neobrutalism-blue hover:text-white cursor-pointer transition-colors duration-300"
+                    onClick={() => {
+                      setSearchQuery(tag);
+                      handleSearch({ preventDefault: () => {} });
+                    }}
                   >
                     {tag}
                   </span>

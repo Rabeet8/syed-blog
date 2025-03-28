@@ -10,6 +10,11 @@ import { featuredPost, latestPosts } from '../data/mockData';
 const Index = () => {
   // Get latest posts (excluding the featured post)
   const latest = latestPosts.filter(post => post.id !== featuredPost.id);
+  
+  // Set document title
+  React.useEffect(() => {
+    document.title = "Syed's Blog | Home";
+  }, []);
 
   return (
     <div className="min-h-screen flex flex-col">
