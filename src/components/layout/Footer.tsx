@@ -1,0 +1,41 @@
+
+import React from 'react';
+import { Link } from 'react-router-dom';
+
+const Footer = () => {
+  return (
+    <footer className="bg-black text-white py-12 border-t-4 border-neobrutalism-yellow">
+      <div className="container mx-auto px-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div>
+            <h3 className="font-mono font-bold text-2xl mb-4">NEOBLOG</h3>
+            <p className="mb-4">A brutalist blog about tech, blockchain, personal growth, and design.</p>
+            <p className="text-neobrutalism-gray">&copy; {new Date().getFullYear()} NEOBLOG. All rights reserved.</p>
+          </div>
+          
+          <div>
+            <h4 className="font-mono font-bold text-xl mb-4">CATEGORIES</h4>
+            <ul className="space-y-2">
+              <li><Link to="/category/tech" className="hover:text-neobrutalism-yellow transition-colors">Tech & Development</Link></li>
+              <li><Link to="/category/blockchain" className="hover:text-neobrutalism-yellow transition-colors">Blockchain & Web3</Link></li>
+              <li><Link to="/category/growth" className="hover:text-neobrutalism-yellow transition-colors">Personal Growth</Link></li>
+              <li><Link to="/category/design" className="hover:text-neobrutalism-yellow transition-colors">Design & Aesthetics</Link></li>
+            </ul>
+          </div>
+          
+          <div>
+            <h4 className="font-mono font-bold text-xl mb-4">CONNECT</h4>
+            <ul className="space-y-2">
+              <li><a href="#" className="hover:text-neobrutalism-yellow transition-colors">Twitter</a></li>
+              <li><a href="#" className="hover:text-neobrutalism-yellow transition-colors">GitHub</a></li>
+              <li><a href="#" className="hover:text-neobrutalism-yellow transition-colors">LinkedIn</a></li>
+              <li><a href="#" className="hover:text-neobrutalism-yellow transition-colors">Email</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;

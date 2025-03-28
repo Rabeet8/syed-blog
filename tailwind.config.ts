@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -52,45 +53,95 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				sidebar: {
-					DEFAULT: 'hsl(var(--sidebar-background))',
-					foreground: 'hsl(var(--sidebar-foreground))',
-					primary: 'hsl(var(--sidebar-primary))',
-					'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
-					accent: 'hsl(var(--sidebar-accent))',
-					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
-					border: 'hsl(var(--sidebar-border))',
-					ring: 'hsl(var(--sidebar-ring))'
-				}
+				neobrutalism: {
+					blue: '#4361EE',
+					lightblue: '#7FB5FF',
+					yellow: '#FFBE0B',
+					pink: '#F72585',
+					black: '#000000',
+					white: '#FFFFFF',
+					offwhite: '#F5F5F5',
+					gray: '#D3D3D3',
+				},
+			},
+			fontFamily: {
+				sans: ['Space Grotesk', 'sans-serif'],
+				mono: ['Space Mono', 'monospace'],
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',
-				sm: 'calc(var(--radius) - 4px)'
+				sm: 'calc(var(--radius) - 4px)',
+				none: '0',
+			},
+			borderWidth: {
+				'3': '3px',
+				'4': '4px',
+				'6': '6px',
+			},
+			boxShadow: {
+				'brutal': '4px 4px 0 0 #000',
+				'brutal-lg': '8px 8px 0 0 #000',
 			},
 			keyframes: {
 				'accordion-down': {
-					from: {
-						height: '0'
-					},
-					to: {
-						height: 'var(--radix-accordion-content-height)'
-					}
+					from: { height: '0' },
+					to: { height: 'var(--radix-accordion-content-height)' },
 				},
 				'accordion-up': {
-					from: {
-						height: 'var(--radix-accordion-content-height)'
-					},
-					to: {
-						height: '0'
-					}
+					from: { height: 'var(--radix-accordion-content-height)' },
+					to: { height: '0' },
+				},
+				wiggle: {
+					'0%, 100%': { transform: 'rotate(-2deg)' },
+					'50%': { transform: 'rotate(2deg)' },
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
-			}
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'wiggle': 'wiggle 0.3s ease-in-out',
+			},
+			typography: {
+				DEFAULT: {
+					css: {
+						maxWidth: '100%',
+						'h1, h2, h3, h4': {
+							fontWeight: '700',
+							fontFamily: 'Space Mono, monospace',
+						},
+						'pre': {
+							backgroundColor: '#000',
+							color: '#FFF',
+							border: '4px solid #333',
+							padding: '1rem',
+							borderRadius: '0',
+							boxShadow: '4px 4px 0 0 #000',
+						},
+						'code': {
+							backgroundColor: '#F5F5F5',
+							color: '#F72585',
+							fontFamily: 'Space Mono, monospace',
+							padding: '0.1rem 0.3rem',
+							borderRadius: '0',
+							border: '2px solid #000',
+						},
+						'a': {
+							color: '#4361EE',
+							textDecoration: 'underline',
+							fontWeight: '600',
+						},
+						'blockquote': {
+							borderLeft: '4px solid #FFBE0B',
+							fontStyle: 'normal',
+							fontWeight: '500',
+							backgroundColor: '#F5F5F5',
+							padding: '1rem',
+						}
+					},
+				},
+			},
 		}
 	},
-	plugins: [require("tailwindcss-animate")],
+	plugins: [require("tailwindcss-animate"), require('@tailwindcss/typography')],
 } satisfies Config;

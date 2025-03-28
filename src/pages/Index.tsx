@@ -1,12 +1,30 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import React from 'react';
+import Hero from '../components/home/Hero';
+import FeaturedPost from '../components/home/FeaturedPost';
+import PostGrid from '../components/home/PostGrid';
+import Navbar from '../components/layout/Navbar';
+import Footer from '../components/layout/Footer';
+import { featuredPost, latestPosts } from '../data/mockData';
 
 const Index = () => {
+  // Get latest posts (excluding the featured post)
+  const latest = latestPosts.filter(post => post.id !== featuredPost.id);
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen flex flex-col">
+      <Navbar />
+      
+      <main className="flex-grow">
+        <Hero />
+        <FeaturedPost post={featuredPost} />
+        <PostGrid 
+          posts={latest} 
+          title="LATEST POSTS"
+        />
+      </main>
+      
+      <Footer />
     </div>
   );
 };
