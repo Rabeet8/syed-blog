@@ -1,4 +1,3 @@
-
 export const featuredPost = {
   id: "1",
   title: "How I Built a Web3 Marketplace That Actually Works",
@@ -142,10 +141,10 @@ function ProductPage({ products, selectedCategory }) {
       
       <pre><code>import { FixedSizeList } from 'react-window';
 
-function ProductList({ products }) {
+function ProductList({ items }) {
   const Row = ({ index, style }) => (
     <div style={style}>
-      {products[index].name} - ${products[index].price}
+      {items[index].name} - ${items[index].price}
     </div>
   );
 
@@ -153,7 +152,7 @@ function ProductList({ products }) {
     <FixedSizeList
       height={500}
       width="100%"
-      itemCount={products.length}
+      itemCount={items.length}
       itemSize={35}
     >
       {Row}
@@ -182,7 +181,7 @@ function App() {
       <h2>Debouncing and Throttling</h2>
       <p>Control the rate at which functions execute, especially for search inputs and scroll events:</p>
       
-      <pre><code>import { useState, useEffect } from 'react';
+      <pre><code>import { useState, useEffect, useRef } from 'react';
 import debounce from 'lodash/debounce';
 
 function SearchComponent() {
