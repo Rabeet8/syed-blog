@@ -31,7 +31,7 @@ const Hero = () => {
         
         <div className="relative">
           <div className="w-full h-80 md:h-96 bg-neobrutalism-yellow border-4 border-black shadow-brutal-lg overflow-hidden">
-            {/* 3D Avatar */}
+            {/* Avatar Image */}
             <AvatarModel />
             
             <div className="absolute -bottom-5 -right-5 bg-neobrutalism-pink text-white font-mono font-bold py-2 px-4 border-4 border-black rotate-3">
