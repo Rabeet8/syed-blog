@@ -1,3 +1,4 @@
+
 export const featuredPost = {
   id: "1",
   title: "How I Built a Web3 Marketplace That Actually Works",
@@ -144,7 +145,7 @@ function ProductPage({ products, selectedCategory }) {
 function ProductList({ items }) {
   const Row = ({ index, style }) => (
     <div style={style}>
-      {items[index].name} - ${items[index].price}
+      {\`\${items[index].name} - \$\${items[index].price}\`}
     </div>
   );
 
