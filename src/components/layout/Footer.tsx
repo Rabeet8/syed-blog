@@ -26,10 +26,10 @@ const Footer = () => {
           <div>
             <h4 className="font-mono font-bold text-xl mb-4">CONNECT</h4>
             <ul className="space-y-2">
-              <li><a href="#" className="hover:text-neobrutalism-yellow transition-colors">Twitter</a></li>
-              <li><a href="#" className="hover:text-neobrutalism-yellow transition-colors">GitHub</a></li>
-              <li><a href="#" className="hover:text-neobrutalism-yellow transition-colors">LinkedIn</a></li>
-              <li><a href="#" className="hover:text-neobrutalism-yellow transition-colors">Email</a></li>
+              <li><a href="https://x.com/CuriousRabeet" target="_blank" rel="noopener noreferrer" className="hover:text-neobrutalism-yellow transition-colors">Twitter</a></li>
+              <li><a href="https://github.com/Rabeet8" target="_blank" rel="noopener noreferrer" className="hover:text-neobrutalism-yellow transition-colors">GitHub</a></li>
+              <li><a href="https://www.linkedin.com/in/syedrabeet/" target="_blank" rel="noopener noreferrer" className="hover:text-neobrutalism-yellow transition-colors">LinkedIn</a></li>
+              <li><a href="mailto:syedrabeet2002@gmail.com" className="hover:text-neobrutalism-yellow transition-colors">Email</a></li>
             </ul>
           </div>
         </div>

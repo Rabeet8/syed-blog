@@ -24,7 +24,7 @@ const AboutMe = () => {
           <div className="md:col-span-1">
             <div className="border-4 border-black bg-neobrutalism-blue p-6 shadow-brutal-sm mb-6">
               <img 
-                src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1050&q=80" 
+                src="/lovable-uploads/d054ddeb-68a8-461a-995a-499fbc65c3b2.png" 
                 alt="Syed Portrait" 
                 className="w-full h-auto border-4 border-black"
               />
@@ -34,23 +34,23 @@ const AboutMe = () => {
               <h3 className="font-mono font-bold text-xl mb-4">CONNECT WITH ME</h3>
               <ul className="space-y-3">
                 <li className="hover:text-neobrutalism-pink">
-                  <a href="#" className="inline-flex items-center">
-                    <span className="font-bold mr-2">Twitter:</span> @syedblog
+                  <a href="https://x.com/CuriousRabeet" target="_blank" rel="noopener noreferrer" className="inline-flex items-center">
+                    <span className="font-bold mr-2">Twitter:</span> @CuriousRabeet
                   </a>
                 </li>
                 <li className="hover:text-neobrutalism-pink">
-                  <a href="#" className="inline-flex items-center">
-                    <span className="font-bold mr-2">GitHub:</span> syeddev
+                  <a href="https://github.com/Rabeet8" target="_blank" rel="noopener noreferrer" className="inline-flex items-center">
+                    <span className="font-bold mr-2">GitHub:</span> Rabeet8
                   </a>
                 </li>
                 <li className="hover:text-neobrutalism-pink">
-                  <a href="#" className="inline-flex items-center">
-                    <span className="font-bold mr-2">LinkedIn:</span> syed
+                  <a href="https://www.linkedin.com/in/syedrabeet/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center">
+                    <span className="font-bold mr-2">LinkedIn:</span> syedrabeet
                   </a>
                 </li>
                 <li className="hover:text-neobrutalism-pink">
-                  <a href="mailto:hello@syedblog.com" className="inline-flex items-center">
-                    <span className="font-bold mr-2">Email:</span> hello@syedblog.com
+                  <a href="mailto:syedrabeet2002@gmail.com" className="inline-flex items-center">
+                    <span className="font-bold mr-2">Email:</span> syedrabeet2002@gmail.com
                   </a>
                 </li>
               </ul>
