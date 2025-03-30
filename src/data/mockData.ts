@@ -1,4 +1,3 @@
-
 export const featuredPost = {
   id: "1",
   title: "How I Built a Web3 Marketplace That Actually Works",
@@ -62,201 +61,6 @@ export const featuredPost = {
 };
 
 export const latestPosts = [
-  {
-    id: "2",
-    title: "Designing with Raw Aesthetics: The Neo-Brutalist Web",
-    excerpt: "Exploring the bold, raw design philosophy that's taking over the web design landscape.",
-    date: "May 18, 2023",
-    category: "Design",
-    imageUrl: "https://images.unsplash.com/photo-1488972685288-c3fd157d7c7a",
-    slug: "neo-brutalist-web-design",
-    content: `
-      <p>Neo-brutalism in web design embraces raw, unpolished aesthetics while creating functional digital experiences. Let's explore this exciting trend.</p>
-      
-      <h2>Origins of Brutalism in Design</h2>
-      <p>Brutalism began as an architectural movement characterized by raw concrete, bold geometry, and a utilitarian approach. Digital brutalism translates these principles to the web.</p>
-      
-      <h2>Characteristics of Neo-Brutalist Web Design</h2>
-      <ul>
-        <li>High contrast color schemes</li>
-        <li>Bold, oversized typography</li>
-        <li>Raw, unpolished interfaces</li>
-        <li>Exposed structural elements</li>
-        <li>Lack of decorative features</li>
-        <li>Functional layouts</li>
-      </ul>
-      
-      <h2>Code Examples</h2>
-      <p>Neo-brutalist CSS often features stark contrasts and minimal transitions:</p>
-      
-      <pre><code>.brutalist-card {
-  background-color: #ffffff;
-  border: 5px solid #000000;
-  box-shadow: 8px 8px 0 #000000;
-  padding: 2rem;
-  transition: transform 0.2s;
-}
-
-.brutalist-card:hover {
-  transform: translate(4px, 4px);
-  box-shadow: 4px 4px 0 #000000;
-}</code></pre>
-      
-      <h2>Finding Balance</h2>
-      <p>The challenge with neo-brutalist design is balancing raw aesthetics with usability. The best implementations maintain good UX principles while embracing the bold visual language.</p>
-      
-      <h2>Case Studies</h2>
-      <p>Some excellent examples of neo-brutalist web design include the Balenciaga website, Gumroad, and Figma's recent marketing pages. Each brings a unique take while maintaining core brutalist principles.</p>
-    `
-  },
-  {
-    id: "3",
-    title: "React Performance Optimization Techniques You Should Know",
-    excerpt: "Level up your React applications with these powerful performance techniques.",
-    date: "May 10, 2023",
-    category: "Tech",
-    imageUrl: "https://images.unsplash.com/photo-1527576539890-dfa815648363",
-    slug: "react-performance-optimization",
-    content: `
-      <p>React applications can suffer from performance issues as they grow. Here are battle-tested techniques to keep your React apps lightning fast.</p>
-      
-      <h2>Memoization with React.memo and useMemo</h2>
-      <p>Prevent unnecessary re-renders by memoizing components and computed values:</p>
-      
-      <pre><code>// Memoizing a component
-const ExpensiveComponent = React.memo(({ data }) => {
-  // Component implementation
-});
-
-// Memoizing a computed value
-function ProductPage({ products, selectedCategory }) {
-  const filteredProducts = useMemo(() => {
-    return products.filter(product => product.category === selectedCategory);
-  }, [products, selectedCategory]);
-  
-  // Component implementation
-}</code></pre>
-      
-      <h2>Virtualization for Long Lists</h2>
-      <p>When rendering long lists, only render items that are visible in the viewport:</p>
-      
-      <pre><code>import { FixedSizeList } from 'react-window';
-
-function ProductList({ items }) {
-  const Row = ({ index, style }) => (
-    <div style={style}>
-      {\`\${items[index].name} - \$\${items[index].price}\`}
-    </div>
-  );
-
-  return (
-    <FixedSizeList
-      height={500}
-      width="100%"
-      itemCount={items.length}
-      itemSize={35}
-    >
-      {Row}
-    </FixedSizeList>
-  );
-}</code></pre>
-      
-      <h2>Code Splitting with React.lazy</h2>
-      <p>Split your bundle and load components only when needed:</p>
-      
-      <pre><code>import React, { Suspense, lazy } from 'react';
-
-// Lazy load the component
-const HeavyComponent = lazy(() => import('./HeavyComponent'));
-
-function App() {
-  return (
-    <div>
-      <Suspense fallback={<div>Loading...</div>}>
-        <HeavyComponent />
-      </Suspense>
-    </div>
-  );
-}</code></pre>
-      
-      <h2>Debouncing and Throttling</h2>
-      <p>Control the rate at which functions execute, especially for search inputs and scroll events:</p>
-      
-      <pre><code>import { useState, useEffect, useRef } from 'react';
-import debounce from 'lodash/debounce';
-
-function SearchComponent() {
-  const [searchTerm, setSearchTerm] = useState('');
-  const [results, setResults] = useState([]);
-  
-  // Create a debounced search function
-  const debouncedSearch = useRef(
-    debounce(term => {
-      fetchSearchResults(term).then(setResults);
-    }, 500)
-  ).current;
-  
-  useEffect(() => {
-    if (searchTerm) {
-      debouncedSearch(searchTerm);
-    }
-  }, [searchTerm, debouncedSearch]);
-  
-  return (
-    // Component JSX
-  );
-}</code></pre>
-    `
-  },
-  {
-    id: "4",
-    title: "The Mind-Shifting Power of Daily Mindfulness",
-    excerpt: "How incorporating mindfulness into your daily routine can transform your productivity and wellbeing.",
-    date: "May 5, 2023",
-    category: "Growth",
-    imageUrl: "https://images.unsplash.com/photo-1494891848038-7bd202a2afeb",
-    slug: "daily-mindfulness-power",
-    content: `
-      <p>Mindfulness isn't just a buzzword—it's a powerful practice that can transform how you work and live. Here's how to incorporate it into your daily routine.</p>
-      
-      <h2>What Is Mindfulness?</h2>
-      <p>At its core, mindfulness is the practice of being fully present and engaged in the moment, aware of your thoughts and feelings without distraction or judgment.</p>
-      
-      <h2>The Science Behind Mindfulness</h2>
-      <p>Research has shown that regular mindfulness practice can:</p>
-      <ul>
-        <li>Reduce stress and anxiety</li>
-        <li>Improve focus and concentration</li>
-        <li>Enhance creativity and problem-solving</li>
-        <li>Strengthen emotional regulation</li>
-        <li>Improve memory and cognitive function</li>
-      </ul>
-      
-      <h2>Simple Daily Mindfulness Practices</h2>
-      <h3>1. Mindful Morning Routine</h3>
-      <p>Begin your day with intention by taking 5-10 minutes to sit quietly, focus on your breath, and set intentions for the day ahead.</p>
-      
-      <h3>2. Single-Tasking</h3>
-      <p>Instead of multitasking, focus completely on one task at a time. When coding, just code. When eating, just eat. When listening, just listen.</p>
-      
-      <h3>3. Mindful Transitions</h3>
-      <p>Use the transitions between activities as mindfulness triggers. Before starting a new task, take three deep breaths and consciously shift your attention.</p>
-      
-      <h2>Incorporating Mindfulness into Coding</h2>
-      <p>As developers, we can benefit greatly from mindful coding practices:</p>
-      <ul>
-        <li>Begin each coding session with a clear intention</li>
-        <li>Take regular breaks to reset your mind (try the Pomodoro Technique)</li>
-        <li>Practice mindful debugging by approaching errors with curiosity rather than frustration</li>
-        <li>End each session by reviewing what you've accomplished</li>
-      </ul>
-      
-      <h2>Building a Sustainable Practice</h2>
-      <p>The key to making mindfulness work is consistency. Start small with just 5 minutes a day, use reminders or apps to stay on track, and gradually extend your practice as it becomes more natural.</p>
-      
-      <p>Remember, mindfulness isn't about achieving a perfect state of calm—it's about returning to the present moment again and again, with patience and without judgment.</p>
-    `
-  },
   {
     id: "5",
     title: "Setting Up a Secure Ethereum Development Environment",
@@ -368,131 +172,126 @@ contract SecureContract is Ownable, ReentrancyGuard {
     `
   },
   {
-    id: "6",
-    title: "Creating Custom CSS Grid Layouts for Modern Web Applications",
-    excerpt: "Master CSS Grid to create flexible, responsive layouts that stand out from the template crowd.",
-    date: "April 20, 2023",
-    category: "Design",
-    imageUrl: "https://images.unsplash.com/photo-1527576539890-dfa815648363",
-    slug: "custom-css-grid-layouts",
+    id: "7",
+    title: "Understanding Denial of Service (DoS) in Smart Contracts",
+    excerpt: "Learn about Denial of Service attacks in smart contracts and how to prevent them with proper code patterns.",
+    date: "June 10, 2023",
+    category: "Security",
+    imageUrl: "/lovable-uploads/edb3d298-9bd7-4622-afa7-be52d5465297.png",
+    slug: "denial-of-service-smart-contracts",
     content: `
-      <p>CSS Grid has revolutionized web layout design. Learn how to create custom grid layouts that break the mold and showcase your content effectively.</p>
+      <p>I embark on my journey to become a smart contract auditor with Cyfrin Updraft,
+      I have learned about various attack vectors, with Denial of Service (DoS) being my favorite. Imagine being an attacker who completely disrupts a protocol's functionality—while it might seem satisfying from an attacker's perspective, our job as auditors is to prevent such attacks.</p>
       
-      <h2>Beyond Basic Grids</h2>
-      <p>While simple grid layouts are useful, the real power of CSS Grid comes from creating custom, asymmetrical layouts that adapt to different screen sizes.</p>
+      <h2>Understanding DoS in Smart Contracts</h2>
+      <p>Let's consider an example involving an unbounded loop that leads to a DoS attack.</p>
       
-      <h2>The Anatomy of a Custom Grid</h2>
-      <pre><code>.grid-container {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: auto;
-  grid-gap: 20px;
-}
-
-.featured-item {
-  grid-column: 1 / span 4;
-  grid-row: 1 / span 2;
-}
-
-.secondary-item {
-  grid-column: 5 / span 2;
-  grid-row: 1;
-}
-
-.tertiary-item {
-  grid-column: 5 / span 2;
-  grid-row: 2;
-}
-
-/* More grid area definitions */</code></pre>
+      <p>In this smart contract, users call the enter function, which checks if their address is already in an array. If the address is not in the array, the function adds it.</p>
       
-      <h2>Creating a Magazine-Style Layout</h2>
-      <p>Magazine-style layouts with varied sizes of content blocks can be created easily with Grid:</p>
-      
-      <pre><code>.magazine-grid {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-auto-rows: minmax(100px, auto);
-  grid-gap: 16px;
-}
+      <pre><code>// SPDX-License-Identifier: MIT
+pragma solidity 0.8.20;
+contract DoS {
+    address[] entrants;
 
-.headline {
-  grid-column: 1 / span 8;
-  grid-row: 1 / span 2;
-}
-
-.sidebar {
-  grid-column: 9 / span 4;
-  grid-row: 1 / span 4;
-}
-
-.article-preview-large {
-  grid-column: 1 / span 5;
-  grid-row: 3 / span 3;
-}
-
-.article-preview-medium {
-  grid-column: 6 / span 3;
-  grid-row: 3 / span 2;
-}
-
-/* And so on... */</code></pre>
-      
-      <h2>Responsive Grid Techniques</h2>
-      <p>Making your custom grids responsive is essential. There are several approaches:</p>
-      
-      <h3>1. Using minmax()</h3>
-      <pre><code>.responsive-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  grid-gap: 20px;
+    function enter() public {
+        // Check for duplicate entrants
+        for (uint256 i; i < entrants.length; i++) {
+            if (entrants[i] == msg.sender) {
+                revert("You've already entered!");
+            }
+        }
+        entrants.push(msg.sender);
+    }
 }</code></pre>
       
-      <h3>2. Using grid-template-areas</h3>
-      <pre><code>.grid-container {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: auto auto auto;
-  grid-template-areas:
-    "header header header header header header"
-    "main main main main sidebar sidebar"
-    "footer footer footer footer footer footer";
-}
+      <p>Initially, this works fine for a few users. However, as the number of users grows into the thousands, the cost of running the loop increases significantly. Each time the loop executes, it becomes more expensive for new users to enter.</p>
+      
+      <h2>Testing the DoS Vulnerability</h2>
+      <p>To illustrate this, we conducted a test where we added 1,000 users after two addresses, A and B, and then added address C. The gas fees for adding addresses A and B (the first and second users) were much lower compared to the gas fees for adding address C (after 1,000 users).</p>
+      
+      <pre><code>// SPDX-License-Identifier: MIT
+pragma solidity 0.8.20;
 
-@media (max-width: 768px) {
-  .grid-container {
-    grid-template-columns: 1fr;
-    grid-template-areas:
-      "header"
-      "main"
-      "sidebar"
-      "footer";
-  }
+import {Test, console2} from "forge-std/Test.sol";
+import {DoS} from "../../src/denial-of-service/DoS.sol";
+
+contract DoSTest is Test {
+    DoS public dos;
+
+    address warmUpAddress = makeAddr("warmUp");
+    address personA = makeAddr("A");
+    address personB = makeAddr("B");
+    address personC = makeAddr("C");
+
+    function setUp() public {
+        dos = new DoS();
+    }
+
+    function test_denialOfService() public {
+        // We want to warm up the storage stuff
+        vm.prank(warmUpAddress);
+
+        dos.enter();
+
+        uint256 gasStartA = gasleft();
+        vm.prank(personA);
+        dos.enter();
+        uint256 gasCostA = gasStartA - gasleft();
+
+        uint256 gasStartB = gasleft();
+        vm.prank(personB);
+        dos.enter();
+        uint256 gasCostB = gasStartB - gasleft();
+
+        for (uint256 i; i < 1000; i++) {
+            vm.prank(address(uint160(i)));
+            dos.enter();
+        }
+
+        uint256 gasStartC = gasleft();
+        vm.prank(personC);
+        dos.enter();
+        uint256 gasCostC = gasStartC - gasleft();
+
+        console2.log("Gas cost A: %s", gasCostA);
+        console2.log("Gas cost B: %s", gasCostB);
+        console2.log("Gas cost C: %s", gasCostC);
+
+        // The gas cost will just keep rising, making it harder and harder for new people to enter!
+        assert(gasCostC > gasCostB);
+        assert(gasCostB > gasCostA);
+    }
 }</code></pre>
       
-      <h3>3. Using grid-auto-flow: dense</h3>
-      <p>This property helps fill in gaps in your grid when items are of different sizes:</p>
+      <div class="my-6">
+        <img src="/lovable-uploads/f6ec4018-8131-4539-9162-51d676a95645.png" alt="Gas result DoS" class="w-full border-4 border-black" />
+      </div>
       
-      <pre><code>.image-gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  grid-auto-rows: 200px;
-  grid-auto-flow: dense;
-  grid-gap: 16px;
-}
+      <p>This difference in gas fees makes the function prohibitively expensive to use, leading to a Denial of Service attack. Essentially, no one will use the function because the gas fees are too high, effectively rendering the contract unusable.</p>
+      
+      <h2>The Solution: Using Mappings</h2>
+      <p>To mitigate this, you can use a mapping instead of an array to keep track of whether an address has been entered or not. This way, checking for duplicates becomes an O(1) operation rather than O(n), eliminating the risk of a DoS attack due to high gas costs.</p>
+      
+      <pre><code>// SPDX-License-Identifier: MIT
+pragma solidity 0.8.20;
 
-.wide {
-  grid-column: span 2;
-}
+contract DoS {
+    mapping(address => bool) public hasEntered;
 
-.tall {
-  grid-row: span 2;
-}
+    function enter() public {
+        // Check if the sender has already entered
+        require(!hasEntered[msg.sender], "You've already entered!");
 
-.large {
-  grid-column: span 2;
-  grid-row: span 2;
+        // Mark the sender as having entered
+        hasEntered[msg.sender] = true;
+    }
 }</code></pre>
+      
+      <div class="my-6">
+        <img src="/lovable-uploads/d054ddeb-68a8-461a-995a-499fbc65c3b2.png" alt="Test result DoS2" class="w-full border-4 border-black" />
+      </div>
+      
+      <p>Now you can see that gas is much more efficiently handled by using a mapping, which prevents the contract from being vulnerable to DoS attacks!</p>
     `
   }
 ];
@@ -563,36 +362,24 @@ export const relatedPosts = [
   },
   {
     id: "r3",
-    title: "Designing DeFi Interfaces That Users Actually Love",
-    category: "Design",
+    title: "Smart Contract Security Best Practices",
+    category: "Security",
     imageUrl: "https://images.unsplash.com/photo-1494891848038-7bd202a2afeb",
-    slug: "designing-defi-interfaces"
+    slug: "smart-contract-security-best-practices"
   }
 ];
 
 export const categories = [
   {
-    id: "tech",
-    name: "Tech & Development",
-    description: "Articles about programming, software development, and technology trends.",
-    count: 12
-  },
-  {
     id: "blockchain",
-    name: "Blockchain & Web3",
+    name: "Blockchain",
     description: "Exploring blockchain technology, cryptocurrencies, and decentralized applications.",
-    count: 8
+    count: 2
   },
   {
-    id: "growth",
-    name: "Personal Growth",
-    description: "Insights on productivity, mindfulness, learning, and personal development.",
-    count: 5
-  },
-  {
-    id: "design",
-    name: "Design & Aesthetics",
-    description: "Topics covering web design, user experience, and visual aesthetics.",
-    count: 7
+    id: "security",
+    name: "Security",
+    description: "Articles about smart contract security, auditing, and best practices for secure blockchain development.",
+    count: 1
   }
 ];

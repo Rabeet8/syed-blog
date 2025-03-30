@@ -16,8 +16,8 @@ const Footer = () => {
           <div>
             <h4 className="font-mono font-bold text-xl mb-4">CATEGORIES</h4>
             <ul className="space-y-2">
-              <li><Link to="/category/blockchain" className="hover:text-neobrutalism-yellow transition-colors">Blockchain & Web3</Link></li>
-              <li><Link to="/category/security" className="hover:text-neobrutalism-yellow transition-colors">Security & Auditing</Link></li>
+              <li><Link to="/category/blockchain" className="hover:text-neobrutalism-yellow transition-colors">Blockchain</Link></li>
+              <li><Link to="/category/security" className="hover:text-neobrutalism-yellow transition-colors">Security</Link></li>
             </ul>
           </div>
           

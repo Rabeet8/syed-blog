@@ -13,9 +13,9 @@ const Category = () => {
   // Find category info
   const category = categories.find(cat => cat.id === categoryId);
   
-  // Filter posts by category
+  // Filter posts by category - case insensitive comparison
   const categoryPosts = latestPosts.filter(post => 
-    post.category.toLowerCase() === (category?.name.split(' ')[0].toLowerCase() || '')
+    post.category.toLowerCase() === (category?.name.toLowerCase() || '')
   );
   
   // If category not found, show error
