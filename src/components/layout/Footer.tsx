@@ -8,9 +8,9 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
-            <h3 className="font-mono font-bold text-2xl mb-4">NEOBLOG</h3>
+            <h3 className="font-mono font-bold text-2xl mb-4">SYED'S BLOG</h3>
             <p className="mb-4">A brutalist blog about blockchain, security, and smart contract auditing.</p>
-            <p className="text-neobrutalism-gray">&copy; {new Date().getFullYear()} NEOBLOG. All rights reserved.</p>
+            <p className="text-neobrutalism-gray">&copy; {new Date().getFullYear()} SYED'S BLOG. All rights reserved.</p>
           </div>
           
           <div>
