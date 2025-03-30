@@ -48,10 +48,8 @@ const Navbar = () => {
           <nav>
             <ul className="flex space-x-6 font-mono font-bold">
               <li><Link to="/" className="hover:text-neobrutalism-pink hover:underline underline-offset-4">HOME</Link></li>
-              <li><Link to="/category/tech" className="hover:text-neobrutalism-pink hover:underline underline-offset-4">TECH</Link></li>
               <li><Link to="/category/blockchain" className="hover:text-neobrutalism-pink hover:underline underline-offset-4">BLOCKCHAIN</Link></li>
-              <li><Link to="/category/growth" className="hover:text-neobrutalism-pink hover:underline underline-offset-4">GROWTH</Link></li>
-              <li><Link to="/category/design" className="hover:text-neobrutalism-pink hover:underline underline-offset-4">DESIGN</Link></li>
+              <li><Link to="/category/security" className="hover:text-neobrutalism-pink hover:underline underline-offset-4">SECURITY</Link></li>
             </ul>
           </nav>
           
@@ -79,10 +77,8 @@ const Navbar = () => {
           <nav className="container mx-auto px-4 py-4">
             <ul className="flex flex-col space-y-4 font-mono font-bold">
               <li><Link to="/" className="block py-2 hover:text-neobrutalism-pink" onClick={toggleMenu}>HOME</Link></li>
-              <li><Link to="/category/tech" className="block py-2 hover:text-neobrutalism-pink" onClick={toggleMenu}>TECH</Link></li>
               <li><Link to="/category/blockchain" className="block py-2 hover:text-neobrutalism-pink" onClick={toggleMenu}>BLOCKCHAIN</Link></li>
-              <li><Link to="/category/growth" className="block py-2 hover:text-neobrutalism-pink" onClick={toggleMenu}>GROWTH</Link></li>
-              <li><Link to="/category/design" className="block py-2 hover:text-neobrutalism-pink" onClick={toggleMenu}>DESIGN</Link></li>
+              <li><Link to="/category/security" className="block py-2 hover:text-neobrutalism-pink" onClick={toggleMenu}>SECURITY</Link></li>
               <li>
                 <button 
                   onClick={() => {
@@ -150,7 +146,7 @@ const Navbar = () => {
             <div className="mt-8">
               <h3 className="font-mono font-bold text-xl mb-4">POPULAR TAGS</h3>
               <div className="flex flex-wrap gap-2">
-                {['React', 'JavaScript', 'Web3', 'Design', 'UX', 'Blockchain', 'CSS', 'TypeScript'].map(tag => (
+                {['Blockchain', 'Smart Contracts', 'Security', 'Web3', 'Solidity', 'DoS'].map(tag => (
                   <span 
                     key={tag} 
                     className="px-4 py-2 border-4 border-black bg-neobrutalism-yellow hover:bg-neobrutalism-blue hover:text-white cursor-pointer transition-colors duration-300"

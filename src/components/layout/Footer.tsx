@@ -9,17 +9,15 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
             <h3 className="font-mono font-bold text-2xl mb-4">NEOBLOG</h3>
-            <p className="mb-4">A brutalist blog about tech, blockchain, personal growth, and design.</p>
+            <p className="mb-4">A brutalist blog about blockchain, security, and smart contract auditing.</p>
             <p className="text-neobrutalism-gray">&copy; {new Date().getFullYear()} NEOBLOG. All rights reserved.</p>
           </div>
           
           <div>
             <h4 className="font-mono font-bold text-xl mb-4">CATEGORIES</h4>
             <ul className="space-y-2">
-              <li><Link to="/category/tech" className="hover:text-neobrutalism-yellow transition-colors">Tech & Development</Link></li>
               <li><Link to="/category/blockchain" className="hover:text-neobrutalism-yellow transition-colors">Blockchain & Web3</Link></li>
-              <li><Link to="/category/growth" className="hover:text-neobrutalism-yellow transition-colors">Personal Growth</Link></li>
-              <li><Link to="/category/design" className="hover:text-neobrutalism-yellow transition-colors">Design & Aesthetics</Link></li>
+              <li><Link to="/category/security" className="hover:text-neobrutalism-yellow transition-colors">Security & Auditing</Link></li>
             </ul>
           </div>
           
