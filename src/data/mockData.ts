@@ -1,3 +1,4 @@
+
 export const featuredPost = {
   id: "1",
   title: "How I Built a Web3 Marketplace That Actually Works",
@@ -175,9 +176,9 @@ contract SecureContract is Ownable, ReentrancyGuard {
     id: "7",
     title: "Understanding Denial of Service (DoS) in Smart Contracts",
     excerpt: "Learn about Denial of Service attacks in smart contracts and how to prevent them with proper code patterns.",
-    date: "June 10, 2023",
+    date: "August 24, 2024",
     category: "Security",
-    imageUrl: "/lovable-uploads/edb3d298-9bd7-4622-afa7-be52d5465297.png",
+    imageUrl: "/lovable-uploads/69960258-a8c7-41a0-a86d-9d2e79e69efb.png",
     slug: "denial-of-service-smart-contracts",
     content: `
       <p>I embark on my journey to become a smart contract auditor with Cyfrin Updraft,

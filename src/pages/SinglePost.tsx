@@ -39,7 +39,7 @@ const SinglePost = () => {
 
   // Special rendering for DoS post with code blocks
   const renderDosPost = () => {
-    if (post.slug === 'understanding-denial-of-service-in-smart-contracts') {
+    if (post.slug === 'denial-of-service-smart-contracts') {
       return (
         <div className="prose prose-lg max-w-none prose-headings:font-mono prose-headings:font-bold prose-pre:bg-black prose-pre:text-white prose-pre:border-4 prose-pre:border-gray-600 prose-pre:shadow-brutal prose-code:font-mono">
           <p className="mb-4">
@@ -207,19 +207,11 @@ contract DoS {
       <main className="flex-grow">
         {/* Hero Section */}
         <div className="w-full h-96 relative overflow-hidden border-b-4 border-black">
-          {post.slug === 'understanding-denial-of-service-in-smart-contracts' ? (
-            <img 
-              src="/lovable-uploads/ac3eda50-551e-4501-8193-b5c8163a3c28.png" 
-              alt={post.title}
-              className="w-full h-full object-cover"
-            />
-          ) : (
-            <img 
-              src={post.imageUrl} 
-              alt={post.title}
-              className="w-full h-full object-cover"
-            />
-          )}
+          <img 
+            src={post.imageUrl} 
+            alt={post.title}
+            className="w-full h-full object-cover"
+          />
           
           <div className="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center">
             <div className="container mx-auto px-4 text-center">
