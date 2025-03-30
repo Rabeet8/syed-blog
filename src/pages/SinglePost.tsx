@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft, Calendar, Tag } from 'lucide-react';
@@ -41,7 +42,7 @@ const SinglePost = () => {
   const renderDosPost = () => {
     if (post.slug === 'denial-of-service-smart-contracts') {
       return (
-        <div className="prose prose-lg max-w-none prose-headings:font-mono prose-headings:font-bold prose-pre:bg-black prose-pre:text-white prose-pre:border-4 prose-pre:border-gray-600 prose-pre:shadow-brutal prose-code:font-mono">
+        <div className="prose prose-lg max-w-none prose-headings:font-mono prose-headings:font-bold">
           <p className="mb-4">
             I embark on my journey to become a smart contract auditor with Cyfrin Updraft,
             I have learned about various attack vectors, with Denial of Service (DoS) being my favorite. Imagine being an attacker who completely disrupts a protocol's functionality—while it might seem satisfying from an attacker's perspective, our job as auditors is to prevent such attacks.
@@ -59,8 +60,12 @@ const SinglePost = () => {
             Initially, this works fine for a few users. However, as the number of users grows into the thousands, the cost of running the loop increases significantly. Each time the loop executes, it becomes more expensive for new users to enter.
           </p>
           
-          <pre className="mb-6 p-4 overflow-x-auto">
-            <code className="language-solidity">
+          <div className="my-8 relative">
+            <pre className="p-6 overflow-x-auto bg-neobrutalism-black text-white border-4 border-neobrutalism-blue shadow-brutal font-mono rounded-none">
+              <div className="absolute top-0 left-0 bg-neobrutalism-blue text-white px-4 py-1 font-mono font-bold border-b-4 border-r-4 border-black">
+                DoS.sol
+              </div>
+              <code className="language-solidity">
 {`// SPDX-License-Identifier: MIT
 pragma solidity 0.8.20;
 contract DoS {
@@ -76,15 +81,20 @@ contract DoS {
         entrants.push(msg.sender);
     }
 }`}
-            </code>
-          </pre>
+              </code>
+            </pre>
+          </div>
           
           <p className="mb-4">
             To illustrate this, we conducted a test where we added 1,000 users after two addresses, A and B, and then added address C. The gas fees for adding addresses A and B (the first and second users) were much lower compared to the gas fees for adding address C (after 1,000 users).
           </p>
           
-          <pre className="mb-6 p-4 overflow-x-auto">
-            <code className="language-solidity">
+          <div className="my-8 relative">
+            <pre className="p-6 overflow-x-auto bg-neobrutalism-black text-white border-4 border-neobrutalism-pink shadow-brutal font-mono rounded-none">
+              <div className="absolute top-0 left-0 bg-neobrutalism-pink text-white px-4 py-1 font-mono font-bold border-b-4 border-r-4 border-black">
+                DoSTest.sol
+              </div>
+              <code className="language-solidity">
 {`// SPDX-License-Identifier: MIT
 pragma solidity 0.8.20;
 
@@ -138,27 +148,37 @@ contract DoSTest is Test {
         assert(gasCostB > gasCostA);
     }
 }`}
-            </code>
-          </pre>
+              </code>
+            </pre>
+          </div>
           
           <p className="mb-4">
             This difference in gas fees makes the function prohibitively expensive to use, leading to a Denial of Service attack. Essentially, no one will use the function because the gas fees are too high, effectively rendering the contract unusable.
           </p>
           
-          <div className="my-8 border-4 border-black shadow-brutal">
-            <img 
-              src="/lovable-uploads/f6ec4018-8131-4539-9162-51d676a95645.png" 
-              alt="Gas result DoS test showing increasing gas costs" 
-              className="w-full h-auto"
-            />
+          <div className="my-8 transform rotate-1 hover:rotate-0 transition-transform duration-300">
+            <div className="border-4 border-black shadow-brutal-lg bg-white p-2">
+              <img 
+                src="/lovable-uploads/f6ec4018-8131-4539-9162-51d676a95645.png" 
+                alt="Gas result DoS test showing increasing gas costs" 
+                className="w-full h-auto"
+              />
+              <div className="bg-neobrutalism-yellow border-t-4 border-black p-2 font-mono text-center font-bold -mb-2 -mx-2">
+                Gas costs increasing with more users
+              </div>
+            </div>
           </div>
           
           <p className="mb-4">
             To mitigate this, you can use a mapping instead of an array to keep track of whether an address has been entered or not. This way, checking for duplicates becomes an O(1) operation rather than O(n), eliminating the risk of a DoS attack due to high gas costs.
           </p>
           
-          <pre className="mb-6 p-4 overflow-x-auto">
-            <code className="language-solidity">
+          <div className="my-8 relative">
+            <pre className="p-6 overflow-x-auto bg-neobrutalism-black text-white border-4 border-neobrutalism-yellow shadow-brutal font-mono rounded-none">
+              <div className="absolute top-0 left-0 bg-neobrutalism-yellow text-black px-4 py-1 font-mono font-bold border-b-4 border-r-4 border-black">
+                ImprovedDoS.sol
+              </div>
+              <code className="language-solidity">
 {`// SPDX-License-Identifier: MIT
 pragma solidity 0.8.20;
 
@@ -173,19 +193,25 @@ contract DoS {
         hasEntered[msg.sender] = true;
     }
 }`}
-            </code>
-          </pre>
+              </code>
+            </pre>
+          </div>
           
           <p className="mb-4">
             Now see that gas is much more efficiently handled by using a mapping.
           </p>
           
-          <div className="my-8 border-4 border-black shadow-brutal">
-            <img 
-              src="/lovable-uploads/25ddbccd-6d66-4b2e-ba95-6f40629f7d8c.png" 
-              alt="Test result showing improved gas efficiency with mapping" 
-              className="w-full h-auto"
-            />
+          <div className="my-8 transform -rotate-1 hover:rotate-0 transition-transform duration-300">
+            <div className="border-4 border-black shadow-brutal-lg bg-white p-2">
+              <img 
+                src="/lovable-uploads/25ddbccd-6d66-4b2e-ba95-6f40629f7d8c.png" 
+                alt="Test result showing improved gas efficiency with mapping" 
+                className="w-full h-auto"
+              />
+              <div className="bg-neobrutalism-blue border-t-4 border-black p-2 font-mono text-center font-bold text-white -mb-2 -mx-2">
+                Improved gas efficiency with mapping
+              </div>
+            </div>
           </div>
         </div>
       );
@@ -215,7 +241,7 @@ contract DoS {
           
           <div className="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center">
             <div className="container mx-auto px-4 text-center">
-              <span className="inline-block bg-neobrutalism-pink text-white px-4 py-2 font-mono font-bold mb-4 border-4 border-black">
+              <span className="inline-block bg-neobrutalism-pink text-white px-4 py-2 font-mono font-bold mb-4 border-4 border-black shadow-brutal transform rotate-1">
                 {post.category}
               </span>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-mono font-bold text-white shadow-text">
@@ -228,17 +254,17 @@ contract DoS {
         {/* Post Meta */}
         <div className="container mx-auto px-4 py-6 flex flex-wrap items-center justify-between border-b-4 border-black">
           <div className="flex items-center space-x-4">
-            <div className="flex items-center">
+            <div className="flex items-center bg-neobrutalism-lightblue px-4 py-1 border-2 border-black shadow-brutal">
               <Calendar size={20} className="mr-2" />
-              <span>{post.date}</span>
+              <span className="font-mono">{post.date}</span>
             </div>
-            <div className="flex items-center">
+            <div className="flex items-center bg-neobrutalism-yellow px-4 py-1 border-2 border-black shadow-brutal">
               <Tag size={20} className="mr-2" />
-              <span>{post.category}</span>
+              <span className="font-mono">{post.category}</span>
             </div>
           </div>
           
-          <Link to="/" className="flex items-center mt-4 sm:mt-0 hover:text-neobrutalism-blue transition-colors">
+          <Link to="/" className="brutal-btn flex items-center mt-4 sm:mt-0 hover:text-white transition-colors">
             <ArrowLeft size={20} className="mr-2" />
             Back to all posts
           </Link>
