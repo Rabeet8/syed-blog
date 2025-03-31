@@ -41,7 +41,9 @@ const FeaturedPost: React.FC<FeaturedPostProps> = ({ post, overview }) => {
             <h3 className="font-mono font-bold text-xl mb-2">{post.title}</h3>
             {overview ? (
               <p className="text-sm">
-                The Rollup Improvement Proposal (RIP) aims to introduce support for the secp256r1 elliptic curve on Ethereum. Currently, Ethereum relies on secp256k1, while many modern systems use secp256r1. This proposal enables native verification for secp256r1 signatures, allowing Ethereum to interact seamlessly with existing security frameworks, reducing costs, and improving Layer 2 rollup efficiency.
+                The Rollup Improvement Proposal (RIP) aims to introduce support for the secp256r1 elliptic curve on Ethereum, addressing a long-standing interoperability challenge. Currently, Ethereum relies on secp256k1, which, while secure and well-suited for blockchain applications, is not widely used outside the crypto space. Many modern security systems, including Apple’s Secure Enclave, WebAuthn, and enterprise authentication frameworks, rely on secp256r1 due to its widespread adoption and regulatory backing. By integrating native verification for secp256r1 signatures, this proposal enables Ethereum to interact seamlessly with these ecosystems, reducing reliance on costly precompiles or off-chain solutions.
+
+              Beyond interoperability, this improvement brings significant efficiency and scalability benefits. Native support for secp256r1 allows Layer 2 rollups to verify transactions and signatures more efficiently, leading to lower gas fees and improved throughput. Traditionally, verifying non-secp256k1 signatures on Ethereum requires expensive cryptographic operations, often handled off-chain or through specialized smart contracts. By making secp256r1 verification a first-class citizen on Ethereum, the proposal reduces computational overhead, paving the way for more scalable and cost-effective smart contract interactions.
               </p>
             ) : (
               <p className="mb-2">{post.excerpt}</p>
