@@ -47,6 +47,24 @@
     @apply bg-background text-foreground font-sans;
     -webkit-font-smoothing: antialiased;
   }
+  
+  /* Custom scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 14px;
+    height: 14px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-white border-l-4 border-black;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-neobrutalism-green border-4 border-black hover:bg-neobrutalism-blue transition-colors duration-300;
+  }
+  
+  ::-webkit-scrollbar-corner {
+    @apply bg-white;
+  }
 }
 
 @layer components {
@@ -65,9 +83,17 @@
   .brutal-card-pink {
     @apply bg-neobrutalism-pink border-4 border-black shadow-brutal transition-all duration-300 hover:shadow-none hover:translate-x-[4px] hover:translate-y-[4px];
   }
+  
+  .brutal-card-green {
+    @apply bg-neobrutalism-green border-4 border-black shadow-brutal transition-all duration-300 hover:shadow-none hover:translate-x-[4px] hover:translate-y-[4px];
+  }
 
   .brutal-btn {
     @apply px-6 py-2 bg-neobrutalism-blue text-white font-bold border-4 border-black shadow-brutal transition-all duration-300 hover:shadow-none hover:translate-x-[4px] hover:translate-y-[4px];
+  }
+  
+  .brutal-btn-green {
+    @apply px-6 py-2 bg-neobrutalism-green text-white font-bold border-4 border-black shadow-brutal transition-all duration-300 hover:shadow-none hover:translate-x-[4px] hover:translate-y-[4px];
   }
 
   .brutal-heading {
@@ -76,5 +102,50 @@
 
   .progress-bar {
     @apply fixed top-0 left-0 h-2 bg-neobrutalism-pink z-50;
+  }
+  
+  /* Code block styling */
+  .code-block {
+    @apply font-mono text-sm p-6 bg-neobrutalism-black text-white border-4 border-black shadow-brutal relative mt-10 mb-8 overflow-x-auto;
+  }
+  
+  .code-block-header {
+    @apply absolute top-0 left-0 bg-neobrutalism-green text-white px-4 py-1 font-mono font-bold border-b-4 border-r-4 border-black;
+  }
+  
+  /* Math formula styling */
+  .math-formula {
+    @apply my-8 bg-neobrutalism-green/20 p-6 border-4 border-black shadow-brutal text-center;
+  }
+  
+  .math-formula-inner {
+    @apply font-mono text-2xl; 
+  }
+  
+  /* Table styling */
+  .brutal-table {
+    @apply w-full border-collapse border-4 border-black my-8 overflow-x-auto;
+  }
+  
+  .brutal-table th {
+    @apply bg-neobrutalism-green text-white border-4 border-black p-3 font-mono;
+  }
+  
+  .brutal-table td {
+    @apply border-4 border-black p-3 font-mono bg-white hover:bg-neobrutalism-green/10 transition-colors;
+  }
+  
+  /* Info box styling */
+  .info-box {
+    @apply flex items-center my-6 p-4 bg-neobrutalism-yellow border-4 border-black shadow-brutal;
+  }
+  
+  /* Image container styling */
+  .brutal-image {
+    @apply my-8 transform hover:rotate-0 transition-transform duration-300 border-4 border-black shadow-brutal-lg bg-white p-2;
+  }
+  
+  .brutal-image-caption {
+    @apply border-t-4 border-black p-2 font-mono text-center font-bold -mb-2 -mx-2;
   }
 }

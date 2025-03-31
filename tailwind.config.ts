@@ -62,6 +62,7 @@ export default {
 					white: '#FFFFFF',
 					offwhite: '#F5F5F5',
 					gray: '#D3D3D3',
+					green: '#36B37E',
 				},
 			},
 			fontFamily: {

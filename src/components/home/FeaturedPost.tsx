@@ -19,7 +19,7 @@ const FeaturedPost: React.FC<FeaturedPostProps> = ({ post }) => {
   return (
     <section className="container mx-auto px-4 py-12">
       <div className="flex items-center mb-8 space-x-2">
-        <div className="w-12 h-1 bg-neobrutalism-blue"></div>
+        <div className="w-12 h-1 bg-neobrutalism-green"></div>
         <h2 className="font-mono font-bold text-2xl">FEATURED POST</h2>
       </div>
       
@@ -28,9 +28,9 @@ const FeaturedPost: React.FC<FeaturedPostProps> = ({ post }) => {
           <img 
             src={post.imageUrl} 
             alt={post.title}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
           />
-          <div className="absolute top-0 left-0 bg-neobrutalism-blue text-white px-4 py-2 font-mono font-bold border-r-4 border-b-4 border-black">
+          <div className="absolute top-0 left-0 bg-neobrutalism-green text-white px-4 py-2 font-mono font-bold border-r-4 border-b-4 border-black">
             {post.category}
           </div>
         </div>
@@ -55,7 +55,7 @@ const FeaturedPost: React.FC<FeaturedPostProps> = ({ post }) => {
             
             <Link 
               to={`/post/${post.slug}`} 
-              className="brutal-btn inline-flex items-center"
+              className="brutal-btn-green inline-flex items-center"
             >
               READ MORE 
               <ArrowRight className="ml-2" size={20} />
