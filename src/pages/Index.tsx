@@ -6,6 +6,7 @@ import PostGrid from '../components/home/PostGrid';
 import Navbar from '../components/layout/Navbar';
 import Footer from '../components/layout/Footer';
 import { featuredPost, latestPosts } from '../data/mockData';
+import { ScrollArea } from '../components/ui/scroll-area';
 
 const Index = () => {
   // Get latest posts (excluding the featured post)
@@ -17,16 +18,18 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col overflow-x-hidden">
       <Navbar />
       
       <main className="flex-grow">
-        <Hero />
-        <FeaturedPost post={featuredPost} />
-        <PostGrid 
-          posts={latest} 
-          title="LATEST POSTS"
-        />
+        <ScrollArea className="h-full">
+          <Hero />
+          <FeaturedPost post={featuredPost} />
+          <PostGrid 
+            posts={latest} 
+            title="LATEST POSTS"
+          />
+        </ScrollArea>
       </main>
       
       <Footer />

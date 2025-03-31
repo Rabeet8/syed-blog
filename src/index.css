@@ -35,7 +35,7 @@
     --input: 0 0% 0%;
     --ring: 0 0% 0%;
 
-    --radius: 0rem;
+    --radius: 0.5rem;
   }
 
   * {
@@ -43,8 +43,8 @@
     box-sizing: border-box;
   }
 
-  body {
-    @apply bg-background text-foreground font-sans;
+  html, body {
+    @apply bg-background text-foreground font-sans overflow-x-hidden max-w-[100vw];
     -webkit-font-smoothing: antialiased;
   }
   
@@ -55,11 +55,11 @@
   }
   
   ::-webkit-scrollbar-track {
-    @apply bg-white border-l-4 border-black;
+    @apply bg-white border-l-4 border-black rounded-r-md;
   }
   
   ::-webkit-scrollbar-thumb {
-    @apply bg-neobrutalism-green border-4 border-black hover:bg-neobrutalism-blue transition-colors duration-300;
+    @apply bg-neobrutalism-green border-4 border-black hover:bg-neobrutalism-blue transition-colors duration-300 rounded-md;
   }
   
   ::-webkit-scrollbar-corner {
@@ -106,7 +106,7 @@
   
   /* Code block styling */
   .code-block {
-    @apply font-mono text-sm p-6 bg-neobrutalism-black text-white border-4 border-black shadow-brutal relative mt-10 mb-8 overflow-x-auto;
+    @apply font-mono text-sm p-6 bg-neobrutalism-black text-white border-4 border-black shadow-brutal relative mt-10 mb-8 overflow-x-auto rounded-md;
   }
   
   .code-block-header {
@@ -115,7 +115,7 @@
   
   /* Math formula styling */
   .math-formula {
-    @apply my-8 bg-neobrutalism-green/20 p-6 border-4 border-black shadow-brutal text-center;
+    @apply my-8 bg-neobrutalism-green/20 p-6 border-4 border-black shadow-brutal text-center rounded-md;
   }
   
   .math-formula-inner {
@@ -137,15 +137,20 @@
   
   /* Info box styling */
   .info-box {
-    @apply flex items-center my-6 p-4 bg-neobrutalism-yellow border-4 border-black shadow-brutal;
+    @apply flex items-center my-6 p-4 bg-neobrutalism-yellow border-4 border-black shadow-brutal rounded-md;
   }
   
   /* Image container styling */
   .brutal-image {
-    @apply my-8 transform hover:rotate-0 transition-transform duration-300 border-4 border-black shadow-brutal-lg bg-white p-2;
+    @apply my-8 transform hover:rotate-0 transition-transform duration-300 border-4 border-black shadow-brutal-lg bg-white p-2 rounded-md overflow-hidden;
   }
   
   .brutal-image-caption {
     @apply border-t-4 border-black p-2 font-mono text-center font-bold -mb-2 -mx-2;
+  }
+
+  /* Shadow text for headings over images */
+  .shadow-text {
+    text-shadow: 3px 3px 0 rgba(0, 0, 0, 0.9);
   }
 }
