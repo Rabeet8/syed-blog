@@ -23,7 +23,7 @@ const FeaturedPost: React.FC<FeaturedPostProps> = ({ post }) => {
         <h2 className="font-mono font-bold text-2xl">FEATURED POST</h2>
       </div>
       
-      <div className="brutal-card grid grid-cols-1 lg:grid-cols-5 overflow-hidden rounded-md">
+      <div className="brutal-card grid grid-cols-1 lg:grid-cols-5 overflow-hidden">
         <div className="lg:col-span-3 h-64 lg:h-auto relative overflow-hidden border-b-4 lg:border-b-0 lg:border-r-4 border-black">
           <img 
             src={post.imageUrl} 

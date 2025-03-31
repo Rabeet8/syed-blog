@@ -1,7 +1,11 @@
 export const featuredPost = {
-  id: 'post-1',
-  title: 'What is RIP-7212? The First Rollup Improvement Proposal (RIP)',
-  excerpt: 'Exploring how RIP-7212 enables secure verification of secp256r1 signatures on Ethereum, improving interoperability with modern security systems.',
+  id: "1",
+  title: "What is RIP-7212? The First Rollup Improvement Proposal (RIP)",
+  excerpt: "Exploring the revolutionary Rollup Improvement Proposal that bridges the gap between Ethereum's native secp256k1 curve and modern secure systems using secp256r1.",
+  date: "August 30, 2024",
+  category: "Blockchain",
+  imageUrl: "/lovable-uploads/321144ea-3db1-4f1e-945e-c40324ab9cdc.png",
+  slug: "rip-7212-first-rollup-improvement-proposal",
   content: `
     <p>On EVM networks, the Elliptic Curve Digital Signature Algorithm (ECDSA) is used for creating externally owned accounts (EOA), signing transactions and verifying digital signatures. The ECDSA relies on the secp256k1 elliptic curves because of its efficiency and security.</p>
     
@@ -273,11 +277,7 @@ export const featuredPost = {
     <p>This proposal has garnered support from various Ethereum ecosystems such as Arbitrum that have proposed adopting this precompile to facilitate account abstraction wallets and improve user experience on DAPPs.</p>
     
     <p>By embracing this proposal Ethereum would be able to enhance its technical capabilities by integrating with modern devices that would help the developers to build more user-friendly software and application.</p>
-  `,
-  date: 'June 5, 2024',
-  category: 'Blockchain',
-  imageUrl: '/lovable-uploads/d054ddeb-68a8-461a-995a-499fbc65c3b2.png',
-  slug: 'what-is-rip-7212-rollup-improvement-proposal'
+  `
 };
 
 export const latestPosts = [
