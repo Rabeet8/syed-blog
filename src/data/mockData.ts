@@ -1,3 +1,4 @@
+
 export const featuredPost = {
   id: "1",
   title: "What is RIP-7212? The First Rollup Improvement Proposal (RIP)",
@@ -7,6 +8,7 @@ export const featuredPost = {
   imageUrl: "/lovable-uploads/321144ea-3db1-4f1e-945e-c40324ab9cdc.png",
   slug: "rip-7212-first-rollup-improvement-proposal",
   content: `
+    <h2>Introduction</h2>
     <p>On EVM networks, the Elliptic Curve Digital Signature Algorithm (ECDSA) is used for creating externally owned accounts (EOA), signing transactions and verifying digital signatures. The ECDSA relies on the secp256k1 elliptic curves because of its efficiency and security.</p>
     
     <p>These elliptic curves play a crucial role in blockchain security and integrity, ensuring trust and reliability in transactions.</p>
@@ -61,7 +63,7 @@ export const featuredPost = {
     
     <div class="flex items-center my-6 p-4 bg-neobrutalism-yellow border-4 border-black shadow-brutal">
       <span class="mr-3"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-lightbulb"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg></span>
-      <p><strong>Extra info:</strong> This curve's formulation offers a combination of computational efficiency and security that makes it ideal for blockchains like Ethereum and Bitcoin.</p>
+      <p>This curve's formulation offers a combination of computational efficiency and security that makes it ideal for blockchains like Ethereum and Bitcoin.</p>
     </div>
     
     <h2>2) secp256r1</h2>
@@ -92,7 +94,7 @@ export const featuredPost = {
     
     <p>The appearance of randomness in these parameters is the intended choice to ensure security.</p>
     
-    <p>Now you might have thought that secp256k1 favours blockchain and cryptocurrencies but why are we studying secp256r1?</p>
+    <h2>Why are we studying secp256r1?</h2>
     
     <p>Well because the secp256r1 elliptic curve is supported by secure enclaves and passkey used in modern devices for secure authentication. Many Trusted Execution Environment (TEE) chips like Apple secure enclave generate and store cryptographic keys using the secp256r1 curve, ensuring that the private keys never leave the device and can only be accessible through biometric verification.</p>
     
@@ -149,69 +151,76 @@ export const featuredPost = {
       <table class="w-full border-collapse border-4 border-black">
         <thead>
           <tr class="bg-neobrutalism-green text-white">
-            <th class="border-4 border-black p-3 font-mono">Implementation</th>
-            <th class="border-4 border-black p-3 font-mono">Gas Cost</th>
-            <th class="border-4 border-black p-3 font-mono">Verification Time</th>
-            <th class="border-4 border-black p-3 font-mono">Security</th>
-            <th class="border-4 border-black p-3 font-mono">Notes</th>
+            <th class="border-4 border-black p-3 font-mono">Verifier</th>
+            <th class="border-4 border-black p-3 font-mono">Gas Consumption At Account Creation</th>
+            <th class="border-4 border-black p-3 font-mono">Gas Consumption at Single Transaction</th>
+            <th class="border-4 border-black p-3 font-mono">Proving Time</th>
+            <th class="border-4 border-black p-3 font-mono">Type</th>
           </tr>
         </thead>
         <tbody>
           <tr class="bg-white hover:bg-neobrutalism-green/10 transition-colors">
-            <td class="border-4 border-black p-3 font-mono">RIP-7212</td>
-            <td class="border-4 border-black p-3 font-mono">3,450</td>
-            <td class="border-4 border-black p-3 font-mono">~5μs</td>
-            <td class="border-4 border-black p-3 font-mono">High</td>
-            <td class="border-4 border-black p-3 font-mono">Native precompile</td>
+            <td class="border-4 border-black p-3 font-mono">Obvious' Solidity Verifier</td>
+            <td class="border-4 border-black p-3 font-mono">330k</td>
+            <td class="border-4 border-black p-3 font-mono">330k</td>
+            <td class="border-4 border-black p-3 font-mono">instant</td>
+            <td class="border-4 border-black p-3 font-mono">Smart Contract Verifier</td>
           </tr>
           <tr class="bg-white hover:bg-neobrutalism-green/10 transition-colors">
-            <td class="border-4 border-black p-3 font-mono">Solidity Impl.</td>
-            <td class="border-4 border-black p-3 font-mono">~2,000,000</td>
-            <td class="border-4 border-black p-3 font-mono">~1.5s</td>
-            <td class="border-4 border-black p-3 font-mono">Medium</td>
-            <td class="border-4 border-black p-3 font-mono">Expensive</td>
+            <td class="border-4 border-black p-3 font-mono">Alembic's Solidity Verifier</td>
+            <td class="border-4 border-black p-3 font-mono">2M</td>
+            <td class="border-4 border-black p-3 font-mono">375k</td>
+            <td class="border-4 border-black p-3 font-mono">instant</td>
+            <td class="border-4 border-black p-3 font-mono">Smart Contract Verifier</td>
           </tr>
           <tr class="bg-white hover:bg-neobrutalism-green/10 transition-colors">
-            <td class="border-4 border-black p-3 font-mono">EIP-7212</td>
-            <td class="border-4 border-black p-3 font-mono">15,000</td>
-            <td class="border-4 border-black p-3 font-mono">~20μs</td>
-            <td class="border-4 border-black p-3 font-mono">High</td>
-            <td class="border-4 border-black p-3 font-mono">Ethereum L1</td>
+            <td class="border-4 border-black p-3 font-mono">FCL's Solidity Verifier without precomputation</td>
+            <td class="border-4 border-black p-3 font-mono">205k</td>
+            <td class="border-4 border-black p-3 font-mono">205k</td>
+            <td class="border-4 border-black p-3 font-mono">instant</td>
+            <td class="border-4 border-black p-3 font-mono">Smart Contract Verifier</td>
           </tr>
           <tr class="bg-white hover:bg-neobrutalism-green/10 transition-colors">
-            <td class="border-4 border-black p-3 font-mono">STARK Proof</td>
-            <td class="border-4 border-black p-3 font-mono">~500,000</td>
-            <td class="border-4 border-black p-3 font-mono">N/A</td>
-            <td class="border-4 border-black p-3 font-mono">High</td>
-            <td class="border-4 border-black p-3 font-mono">Complex setup</td>
+            <td class="border-4 border-black p-3 font-mono">FCL's Solidity Verifier with precomputation</td>
+            <td class="border-4 border-black p-3 font-mono">3.2M</td>
+            <td class="border-4 border-black p-3 font-mono">69k</td>
+            <td class="border-4 border-black p-3 font-mono">instant</td>
+            <td class="border-4 border-black p-3 font-mono">Smart Contract Verifier</td>
           </tr>
           <tr class="bg-white hover:bg-neobrutalism-green/10 transition-colors">
-            <td class="border-4 border-black p-3 font-mono">SNARK Proof</td>
-            <td class="border-4 border-black p-3 font-mono">~200,000</td>
-            <td class="border-4 border-black p-3 font-mono">N/A</td>
-            <td class="border-4 border-black p-3 font-mono">High</td>
-            <td class="border-4 border-black p-3 font-mono">Trusted setup</td>
+            <td class="border-4 border-black p-3 font-mono">Risc0 Verifier</td>
+            <td class="border-4 border-black p-3 font-mono">250k</td>
+            <td class="border-4 border-black p-3 font-mono">250k</td>
+            <td class="border-4 border-black p-3 font-mono">nearly instant</td>
+            <td class="border-4 border-black p-3 font-mono">Zero Knowledge Verifier</td>
           </tr>
           <tr class="bg-white hover:bg-neobrutalism-green/10 transition-colors">
-            <td class="border-4 border-black p-3 font-mono">Assembly Opt.</td>
-            <td class="border-4 border-black p-3 font-mono">~800,000</td>
-            <td class="border-4 border-black p-3 font-mono">~0.4s</td>
-            <td class="border-4 border-black p-3 font-mono">Medium</td>
-            <td class="border-4 border-black p-3 font-mono">Hard to audit</td>
+            <td class="border-4 border-black p-3 font-mono">KnowNothingLabs's Verifier</td>
+            <td class="border-4 border-black p-3 font-mono">520k</td>
+            <td class="border-4 border-black p-3 font-mono">520k</td>
+            <td class="border-4 border-black p-3 font-mono">~ 4 seconds</td>
+            <td class="border-4 border-black p-3 font-mono">Zero Knowledge Verifier</td>
           </tr>
           <tr class="bg-white hover:bg-neobrutalism-green/10 transition-colors">
-            <td class="border-4 border-black p-3 font-mono">Optimized Lib</td>
-            <td class="border-4 border-black p-3 font-mono">~1,200,000</td>
-            <td class="border-4 border-black p-3 font-mono">~0.8s</td>
-            <td class="border-4 border-black p-3 font-mono">Medium</td>
-            <td class="border-4 border-black p-3 font-mono">More auditable</td>
+            <td class="border-4 border-black p-3 font-mono">Circom</td>
+            <td class="border-4 border-black p-3 font-mono">230k</td>
+            <td class="border-4 border-black p-3 font-mono">300k</td>
+            <td class="border-4 border-black p-3 font-mono">nearly instant</td>
+            <td class="border-4 border-black p-3 font-mono">Zero Knowledge Verifier</td>
           </tr>
           <tr class="bg-white hover:bg-neobrutalism-green/10 transition-colors">
-            <td class="border-4 border-black p-3 font-mono">Oracle Solution</td>
-            <td class="border-4 border-black p-3 font-mono">~50,000</td>
-            <td class="border-4 border-black p-3 font-mono">Variable</td>
-            <td class="border-4 border-black p-3 font-mono">Low</td>
-            <td class="border-4 border-black p-3 font-mono">Centralized</td>
+            <td class="border-4 border-black p-3 font-mono">A Verifier With EVMMAX</td>
+            <td class="border-4 border-black p-3 font-mono">73k</td>
+            <td class="border-4 border-black p-3 font-mono">73k</td>
+            <td class="border-4 border-black p-3 font-mono">instant</td>
+            <td class="border-4 border-black p-3 font-mono">A Core Protocol Change</td>
+          </tr>
+          <tr class="bg-white hover:bg-neobrutalism-green/10 transition-colors">
+            <td class="border-4 border-black p-3 font-mono">EIP-7212 - Precompiler Contract for P256</td>
+            <td class="border-4 border-black p-3 font-mono">3450</td>
+            <td class="border-4 border-black p-3 font-mono">3450</td>
+            <td class="border-4 border-black p-3 font-mono">instant</td>
+            <td class="border-4 border-black p-3 font-mono">A Core Protocol Change</td>
           </tr>
         </tbody>
       </table>
@@ -221,7 +230,7 @@ export const featuredPost = {
     
     <div class="flex items-center my-6 p-4 bg-neobrutalism-yellow border-4 border-black shadow-brutal">
       <span class="mr-3"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-lightbulb"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg></span>
-      <p><strong>Extra info:</strong> RIP-7212 reduces gas costs for secp256r1 signature verification by approximately 100x, enhancing efficiency for developers and users.</p>
+      <p>RIP-7212 reduces gas costs for secp256r1 signature verification by approximately 100x, enhancing efficiency for developers and users.</p>
     </div>
     
     <h2>Adoption of RIP 7212</h2>

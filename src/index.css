@@ -44,7 +44,7 @@
   }
 
   body {
-    @apply bg-background text-foreground font-sans;
+    @apply bg-background text-foreground font-sans overflow-x-hidden;
     -webkit-font-smoothing: antialiased;
   }
   
@@ -55,11 +55,11 @@
   }
   
   ::-webkit-scrollbar-track {
-    @apply bg-white border-l-4 border-black;
+    @apply bg-white border-l-4 border-black rounded-r-md;
   }
   
   ::-webkit-scrollbar-thumb {
-    @apply bg-neobrutalism-green border-4 border-black hover:bg-neobrutalism-blue transition-colors duration-300;
+    @apply bg-neobrutalism-green border-4 border-black hover:bg-neobrutalism-blue transition-colors duration-300 rounded-r-md;
   }
   
   ::-webkit-scrollbar-corner {
