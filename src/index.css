@@ -50,20 +50,20 @@
   
   /* Custom scrollbar styling */
   ::-webkit-scrollbar {
-    width: 14px;
-    height: 14px;
+    width: 12px;
+    height: 12px;
   }
   
   ::-webkit-scrollbar-track {
-    @apply bg-white border-l-4 border-black rounded-r-md;
+    @apply bg-white border-l-4 border-black rounded-r-lg;
   }
   
   ::-webkit-scrollbar-thumb {
-    @apply bg-neobrutalism-green border-4 border-black hover:bg-neobrutalism-blue transition-colors duration-300 rounded-r-md;
+    @apply bg-neobrutalism-green border-4 border-black hover:bg-neobrutalism-blue transition-colors duration-300 rounded-full;
   }
   
   ::-webkit-scrollbar-corner {
-    @apply bg-white;
+    @apply bg-white rounded-bl-lg;
   }
   
   /* Custom scrollbar class for components */

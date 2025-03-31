@@ -18,54 +18,54 @@ interface FeaturedPostProps {
 
 const FeaturedPost: React.FC<FeaturedPostProps> = ({ post, overview }) => {
   return (
-    <section className="container mx-auto px-4 py-12">
-      <div className="flex items-center mb-8 space-x-2">
-        <div className="w-12 h-1 bg-neobrutalism-green"></div>
-        <h2 className="font-mono font-bold text-2xl">FEATURED POST</h2>
+    <section className="container mx-auto px-4 py-6">
+      <div className="flex items-center mb-4 space-x-2">
+        <div className="w-10 h-1 bg-neobrutalism-green"></div>
+        <h2 className="font-mono font-bold text-xl">FEATURED POST</h2>
       </div>
       
       <div className="brutal-card grid grid-cols-1 lg:grid-cols-5 overflow-hidden">
-        <div className="lg:col-span-3 h-64 lg:h-auto relative overflow-hidden border-b-4 lg:border-b-0 lg:border-r-4 border-black">
+        <div className="lg:col-span-2 h-48 lg:h-auto relative overflow-hidden border-b-4 lg:border-b-0 lg:border-r-4 border-black">
           <img 
             src={post.imageUrl} 
             alt={post.title}
             className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
           />
-          <div className="absolute top-0 left-0 bg-neobrutalism-green text-white px-4 py-2 font-mono font-bold border-r-4 border-b-4 border-black">
+          <div className="absolute top-0 left-0 bg-neobrutalism-green text-white px-3 py-1 font-mono font-bold border-r-4 border-b-4 border-black">
             {post.category}
           </div>
         </div>
         
-        <div className="lg:col-span-2 p-6 flex flex-col justify-between">
+        <div className="lg:col-span-3 p-4 flex flex-col justify-between">
           <div>
-            <h3 className="font-mono font-bold text-2xl mb-4">{post.title}</h3>
+            <h3 className="font-mono font-bold text-xl mb-2">{post.title}</h3>
             {overview ? (
-              <div className="mb-4 max-h-[400px] overflow-y-auto pr-4 custom-scrollbar">
-                <p className="text-sm">{overview}</p>
-              </div>
+              <p className="text-sm">
+                The Rollup Improvement Proposal (RIP) aims to introduce support for the secp256r1 elliptic curve on Ethereum. Currently, Ethereum relies on secp256k1, while many modern systems use secp256r1. This proposal enables native verification for secp256r1 signatures, allowing Ethereum to interact seamlessly with existing security frameworks, reducing costs, and improving Layer 2 rollup efficiency.
+              </p>
             ) : (
-              <p className="mb-4">{post.excerpt}</p>
+              <p className="mb-2">{post.excerpt}</p>
             )}
           </div>
           
           <div>
-            <div className="flex items-center mb-4 text-sm">
+            <div className="flex items-center mb-3 text-xs">
               <div className="flex items-center mr-4">
-                <Calendar size={16} className="mr-1" />
+                <Calendar size={14} className="mr-1" />
                 <span>{post.date}</span>
               </div>
               <div className="flex items-center">
-                <Tag size={16} className="mr-1" />
+                <Tag size={14} className="mr-1" />
                 <span>{post.category}</span>
               </div>
             </div>
             
             <Link 
               to={`/post/${post.slug}`} 
-              className="brutal-btn-green inline-flex items-center"
+              className="brutal-btn-green inline-flex items-center text-sm py-1"
             >
               READ MORE 
-              <ArrowRight className="ml-2" size={20} />
+              <ArrowRight className="ml-2" size={16} />
             </Link>
           </div>
         </div>
