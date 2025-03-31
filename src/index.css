@@ -65,6 +65,20 @@
   ::-webkit-scrollbar-corner {
     @apply bg-white;
   }
+  
+  /* Custom scrollbar class for components */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-track {
+    @apply bg-white rounded-full;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-neobrutalism-green hover:bg-neobrutalism-blue transition-colors duration-300 rounded-full border-2 border-black;
+  }
 }
 
 @layer components {

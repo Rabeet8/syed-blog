@@ -2,7 +2,6 @@
 import React from 'react';
 import { Calendar, Tag, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { ScrollArea } from '../ui/scroll-area';
 
 interface FeaturedPostProps {
   post: {
@@ -41,9 +40,9 @@ const FeaturedPost: React.FC<FeaturedPostProps> = ({ post, overview }) => {
           <div>
             <h3 className="font-mono font-bold text-2xl mb-4">{post.title}</h3>
             {overview ? (
-              <ScrollArea className="h-48 mb-4 pr-4">
+              <div className="mb-4 max-h-[400px] overflow-y-auto pr-4 custom-scrollbar">
                 <p className="text-sm">{overview}</p>
-              </ScrollArea>
+              </div>
             ) : (
               <p className="mb-4">{post.excerpt}</p>
             )}
