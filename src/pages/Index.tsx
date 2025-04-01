@@ -11,10 +11,14 @@ const Index = () => {
   // Find DeFi post
   const defiPost = latestPosts.find(post => post.slug === "defi-benefits-unbanked-population");
   
-  // Get latest posts (excluding the featured post and DeFi post since it will be shown separately)
+  // Find Blockchain Revolution post
+  const blockchainRevolutionPost = latestPosts.find(post => post.slug === "blockchain-revolutionizing-future");
+  
+  // Get latest posts (excluding the featured post, DeFi post, and Blockchain Revolution post since they will be shown separately)
   const latest = latestPosts.filter(post => 
     post.id !== featuredPost.id && 
-    post.id !== (defiPost?.id || '')
+    post.id !== (defiPost?.id || '') &&
+    post.id !== (blockchainRevolutionPost?.id || '')
   );
   
   // Create a copy of featured post with updated date
@@ -35,12 +39,16 @@ const Index = () => {
       <main className="flex-grow w-full">
         <Hero />
         <FeaturedPost post={updatedFeaturedPost} overview="short" />
-        {defiPost && (
-          <PostGrid 
-            posts={[defiPost]} 
-            title="FEATURED IN BLOCKCHAIN"
-          />
-        )}
+        
+        {/* Display both Blockchain-related posts in FEATURED IN BLOCKCHAIN section */}
+        <PostGrid 
+          posts={[
+            ...(defiPost ? [defiPost] : []), 
+            ...(blockchainRevolutionPost ? [blockchainRevolutionPost] : [])
+          ]} 
+          title="FEATURED IN BLOCKCHAIN"
+        />
+        
         <PostGrid 
           posts={latest} 
           title="LATEST POSTS"
