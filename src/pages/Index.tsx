@@ -8,8 +8,14 @@ import Footer from '../components/layout/Footer';
 import { featuredPost, latestPosts } from '../data/mockData';
 
 const Index = () => {
-  // Get latest posts (excluding the featured post)
-  const latest = latestPosts.filter(post => post.id !== featuredPost.id);
+  // Find DeFi post
+  const defiPost = latestPosts.find(post => post.slug === "defi-benefits-unbanked-population");
+  
+  // Get latest posts (excluding the featured post and DeFi post since it will be shown separately)
+  const latest = latestPosts.filter(post => 
+    post.id !== featuredPost.id && 
+    post.id !== (defiPost?.id || '')
+  );
   
   // Create a copy of featured post with updated date
   const updatedFeaturedPost = {
@@ -29,6 +35,12 @@ const Index = () => {
       <main className="flex-grow w-full">
         <Hero />
         <FeaturedPost post={updatedFeaturedPost} overview="short" />
+        {defiPost && (
+          <PostGrid 
+            posts={[defiPost]} 
+            title="FEATURED IN BLOCKCHAIN"
+          />
+        )}
         <PostGrid 
           posts={latest} 
           title="LATEST POSTS"

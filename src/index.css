@@ -88,6 +88,14 @@
     @apply inline-block py-2 px-4 bg-neobrutalism-green text-white border-4 border-black shadow-brutal font-mono font-bold uppercase hover:bg-black hover:text-white transition-colors duration-200;
   }
   
+  .brutal-btn-blue {
+    @apply inline-block py-2 px-4 bg-neobrutalism-blue text-white border-4 border-black shadow-brutal font-mono font-bold uppercase hover:bg-black hover:text-white transition-colors duration-200;
+  }
+  
+  .brutal-btn-plain {
+    @apply inline-block py-2 px-4 bg-white text-black border-4 border-black shadow-brutal font-mono font-bold uppercase hover:bg-gray-100 transition-colors duration-200;
+  }
+  
   .shadow-brutal {
     @apply shadow-[4px_4px_0_0_rgba(0,0,0,1)];
   }

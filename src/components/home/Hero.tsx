@@ -22,7 +22,7 @@ const Hero = () => {
           
           <Link 
             to="/about" 
-            className="brutal-btn inline-flex items-center"
+            className="brutal-btn-blue inline-flex items-center"
           >
             ABOUT ME 
             <ArrowRight className="ml-2" size={20} />

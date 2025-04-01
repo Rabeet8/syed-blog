@@ -25,7 +25,7 @@ const FeaturedPost: React.FC<FeaturedPostProps> = ({ post, overview }) => {
       </div>
       
       <div className="brutal-card grid grid-cols-1 lg:grid-cols-5 overflow-hidden">
-        <div className="lg:col-span-2 h-40 lg:h-auto relative overflow-hidden border-b-4 lg:border-b-0 lg:border-r-4 border-black">
+        <div className="lg:col-span-2 h-36 lg:h-auto relative overflow-hidden border-b-4 lg:border-b-0 lg:border-r-4 border-black">
           <img 
             src={post.imageUrl} 
             alt={post.title}
@@ -40,8 +40,8 @@ const FeaturedPost: React.FC<FeaturedPostProps> = ({ post, overview }) => {
           <div>
             <h3 className="font-mono font-bold text-lg mb-2">{post.title}</h3>
             {overview ? (
-              <p className="text-sm line-clamp-4">
-                The Rollup Improvement Proposal (RIP) aims to introduce support for the secp256r1 elliptic curve on Ethereum, addressing a long-standing interoperability challenge. Currently, Ethereum relies on secp256k1, which, while secure and well-suited for blockchain applications, is not widely used outside the crypto space. Many modern security systems, including Apple's Secure Enclave, WebAuthn, and enterprise authentication frameworks, rely on secp256r1 due to its widespread adoption and regulatory backing.
+              <p className="text-sm line-clamp-3">
+                The RIP aims to introduce support for the secp256r1 curve on Ethereum, bridging a gap between blockchain and modern security systems. This enables seamless interactions with Apple's Secure Enclave, WebAuthn, and other systems using the more widely adopted curve.
               </p>
             ) : (
               <p className="mb-2 text-sm">{post.excerpt}</p>
@@ -62,7 +62,7 @@ const FeaturedPost: React.FC<FeaturedPostProps> = ({ post, overview }) => {
             
             <Link 
               to={`/post/${post.slug}`} 
-              className="brutal-btn-green inline-flex items-center text-xs py-1"
+              className="brutal-btn-plain inline-flex items-center text-xs py-1"
             >
               READ MORE 
               <ArrowRight className="ml-1" size={14} />
