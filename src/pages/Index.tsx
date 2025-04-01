@@ -14,12 +14,15 @@ const Index = () => {
   // Find Blockchain Revolution post
   const blockchainRevolutionPost = latestPosts.find(post => post.slug === "blockchain-revolutionizing-future");
   
-  // Get latest posts (excluding the featured post, DeFi post, and Blockchain Revolution post since they will be shown separately)
-  const latest = latestPosts.filter(post => 
-    post.id !== featuredPost.id && 
-    post.id !== (defiPost?.id || '') &&
-    post.id !== (blockchainRevolutionPost?.id || '')
-  );
+  // Find DoS post
+  const dosPost = latestPosts.find(post => post.slug === "denial-of-service-smart-contracts");
+  
+  // Create an array with only the three posts we want to display
+  const filteredPosts = [
+    ...(defiPost ? [defiPost] : []),
+    ...(blockchainRevolutionPost ? [blockchainRevolutionPost] : []),
+    ...(dosPost ? [dosPost] : [])
+  ];
   
   // Create a copy of featured post with updated date
   const updatedFeaturedPost = {
@@ -40,17 +43,9 @@ const Index = () => {
         <Hero />
         <FeaturedPost post={updatedFeaturedPost} overview="short" />
         
-        {/* Display both Blockchain-related posts in FEATURED IN BLOCKCHAIN section */}
+        {/* Display all three posts in LATEST POSTS section */}
         <PostGrid 
-          posts={[
-            ...(defiPost ? [defiPost] : []), 
-            ...(blockchainRevolutionPost ? [blockchainRevolutionPost] : [])
-          ]} 
-          title="FEATURED IN BLOCKCHAIN"
-        />
-        
-        <PostGrid 
-          posts={latest} 
+          posts={filteredPosts} 
           title="LATEST POSTS"
         />
       </main>
