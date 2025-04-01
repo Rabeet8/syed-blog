@@ -17,11 +17,11 @@ const Index = () => {
   // Find DoS post
   const dosPost = latestPosts.find(post => post.slug === "denial-of-service-smart-contracts");
   
-  // Create an array with only the three posts we want to display
+  // Create an array with the posts in the specified order: DoS first, then the others
   const filteredPosts = [
+    ...(dosPost ? [dosPost] : []),
     ...(defiPost ? [defiPost] : []),
-    ...(blockchainRevolutionPost ? [blockchainRevolutionPost] : []),
-    ...(dosPost ? [dosPost] : [])
+    ...(blockchainRevolutionPost ? [blockchainRevolutionPost] : [])
   ];
   
   // Create a copy of featured post with updated date
