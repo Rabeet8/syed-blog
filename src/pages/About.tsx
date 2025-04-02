@@ -64,57 +64,42 @@ const AboutMe = () => {
             
             <div className="space-y-6 text-lg">
               <p>
-                Hello! I'm Syed, a passionate developer, writer, and creator with a keen interest
-                in technology, blockchain, personal growth, and design.
-              </p>
-              
-              <p>
-                With over 8 years of experience in software development, I've worked on a variety of
-                projects ranging from web applications to blockchain solutions. My expertise lies in
-                React, TypeScript, and creating intuitive user experiences.
+                Hey there! I'm Rabeet, a passionate software engineer with expertise in web, mobile, and blockchain development. 
+                With years of experience in React, Next.js, TypeScript, and scalable architectures, I focus on building intuitive, 
+                high-performance applications. Security and efficiency are at the core of my development approach, ensuring robust 
+                and seamless user experiences.
               </p>
               
               <h2 className="font-mono font-bold text-2xl mt-10 mb-4">MY JOURNEY</h2>
               
               <p>
-                My journey began as a self-taught developer, spending countless hours exploring
-                programming languages and building small projects that gradually increased in complexity.
-                What started as a hobby quickly turned into a passion and eventually a career.
-              </p>
-              
-              <p>
-                In 2018, I discovered blockchain technology and was immediately captivated by its
-                potential to revolutionize various industries. Since then, I've been actively involved
-                in the Web3 space, contributing to open-source projects and exploring innovative
-                applications of decentralized technologies.
+                I started as a self-taught developer, spending countless hours experimenting with different technologies, 
+                frameworks, and architectures. Over time, what began as curiosity turned into a full-fledged career in software 
+                engineering. While my primary focus is frontend and mobile development, my journey into blockchain and 
+                cybersecurity has given me a deep appreciation for secure, decentralized systems and best practices in 
+                application security.
               </p>
               
               <h2 className="font-mono font-bold text-2xl mt-10 mb-4">WHY THIS BLOG?</h2>
               
               <p>
-                I created this blog as a platform to share my thoughts, insights, and experiences with
-                like-minded individuals. Here, you'll find articles on a wide range of topics, from
-                technical tutorials and blockchain analyses to personal growth tips and design principles.
-              </p>
-              
-              <p>
-                My writing style is influenced by the neobrutalist design philosophy - raw, honest,
-                and straightforward. I believe in cutting through the noise and delivering content
-                that adds real value to my readers.
+                I created this blog to share insights, best practices, and lessons learned from my experience in 
+                software engineering, blockchain, and security. Whether it's frontend development, UI/UX strategies, 
+                secure coding principles, or decentralized applications, my goal is to provide clear, practical, and 
+                valuable content. My writing style mirrors my coding philosophy—structured, straightforward, and to the point.
               </p>
               
               <h2 className="font-mono font-bold text-2xl mt-10 mb-4">WHAT'S NEXT?</h2>
               
               <p>
-                I'm constantly exploring new technologies and ideas. Currently, I'm focused on
-                advancing my knowledge in artificial intelligence and its intersection with blockchain
-                technology. Stay tuned for insightful articles on these topics!
+                I'm always exploring new trends in web and mobile development, along with advancements in blockchain 
+                security, cryptography, and AI-powered applications. Stay tuned for deep dives into modern frameworks, 
+                smart contract security, and secure software design.
               </p>
               
               <p>
-                Thank you for visiting my blog. Feel free to connect with me through any of the social
-                media platforms listed or drop me an email. I'm always open to interesting conversations
-                and collaboration opportunities.
+                Let's connect! Whether you're a fellow developer, designer, or security enthusiast, I'd love to 
+                exchange ideas and collaborate on innovative projects.
               </p>
             </div>
           </div>
